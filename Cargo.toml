@@ -1,0 +1,21 @@
+[package]
+name = "terrarium-tiles"
+version = "0.1.0"
+edition = "2021"
+description = "Build Terrarium-encoded WebP PMTiles elevation archives from GEBCO grids"
+license = "MIT"
+repository = "https://github.com/cortfritz/terrarium-tiles"
+publish = false
+
+[[bin]]
+name = "gebco-tiles"
+path = "src/main.rs"
+
+[dependencies]
+memmap2 = "0.9"
+rayon = "1.10"
+webp = "0.3"
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+[profile.release]
+opt-level = 3
